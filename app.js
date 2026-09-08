@@ -2,7 +2,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
 
 // Tempel URL Web App Google Apps Script di sini setelah melakukan deployment.
 // Contoh: https://script.google.com/macros/s/AKfycb.../exec
-const APP_SCRIPT_URL = '';
+const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnip6Py6MdlpAzQzVEIwIo0a7Aia_T1ACKmehHgtr9BxhE1pPkV_aoV0IuSZANuCdH/exec';
 
 const questions = [
   {
