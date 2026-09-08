@@ -2,7 +2,7 @@
  * Backend Google Apps Script untuk Love Logic Quiz.
  * Ganti SPREADSHEET_ID dengan ID dari URL Google Spreadsheet Anda.
  */
-const SPREADSHEET_ID = 'PASTE_ID_GOOGLE_SHEET_DI_SINI';
+const SPREADSHEET_ID = 'https://script.google.com/macros/s/AKfycbxnip6Py6MdlpAzQzVEIwIo0a7Aia_T1ACKmehHgtr9BxhE1pPkV_aoV0IuSZANuCdH/exec';
 const SHEET_NAME = 'Hasil Kuis';
 
 function doPost(event) {
