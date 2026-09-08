@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2a1027" />
+    <title>Ruang Kita — Love Logic Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="three-canvas" aria-hidden="true"></canvas>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="app-shell">
+      <header class="brand" aria-label="Ruang Kita">
+        <span class="brand-mark">♥</span>
+        <span>Ruang Kita</span>
+      </header>
+
+      <section id="login-screen" class="screen active" aria-labelledby="login-title">
+        <div class="card login-card">
+          <span class="eyebrow">LOVE LOGIC GAME</span>
+          <h1 id="login-title">Seberapa selaras<br /><em>cara kalian mencinta?</em></h1>
+          <p class="intro">Masuk, jawab 18 situasi kecil dalam hubungan, lalu temukan persentase kecocokan cara berpikir kalian.</p>
+          <form id="login-form" novalidate>
+            <label for="username">Nama panggilan</label>
+            <input id="username" name="username" type="text" maxlength="28" autocomplete="username" placeholder="Contoh: Naya" required />
+            <label for="password">Kode rahasia</label>
+            <input id="password" name="password" type="password" minlength="4" autocomplete="current-password" placeholder="Minimal 4 karakter" required />
+            <p id="login-error" class="form-error" role="alert"></p>
+            <button class="button primary" type="submit">Mulai kisah kita <span>→</span></button>
+          </form>
+          <p class="privacy-note">Kata sandi hanya dipakai untuk membuka permainan ini—tidak disimpan atau dikirim.</p>
+        </div>
+        <p class="floating-caption">dibuat untuk dua hati yang ingin saling mengerti</p>
+      </section>
+
+      <section id="quiz-screen" class="screen" aria-labelledby="quiz-title" hidden>
+        <div class="quiz-layout">
+          <aside class="quiz-sidebar">
+            <span class="eyebrow">LOVE LOGIC GAME</span>
+            <h2 id="quiz-title">Setiap pilihan<br />adalah <em>bahasa cinta.</em></h2>
+            <p>Jawablah yang paling menggambarkan cara kalian menyelesaikan sebuah situasi.</p>
+            <div class="progress-block">
+              <div class="progress-label"><span id="progress-text">Pertanyaan 1 dari 18</span><span id="progress-percent">6%</span></div>
+              <div class="progress-track"><span id="progress-bar"></span></div>
+            </div>
+            <button id="logout-button" class="text-button" type="button">Keluar permainan</button>
+          </aside>
+
+          <article class="card question-card" aria-live="polite">
+            <div class="question-number"><span id="question-number">01</span><span> / 18</span></div>
+            <h3 id="question-text"></h3>
+            <div id="answer-list" class="answer-list" role="radiogroup" aria-label="Pilihan jawaban"></div>
+            <div class="question-actions">
+              <button id="back-button" class="button ghost" type="button">← Kembali</button>
+              <button id="next-button" class="button primary" type="button" disabled>Berikutnya <span>→</span></button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="result-screen" class="screen" aria-labelledby="result-title" hidden>
+        <div class="card result-card">
+          <span class="eyebrow">HASIL LOVE LOGIC</span>
+          <p id="result-greeting" class="result-greeting"></p>
+          <div class="score-orbit" aria-label="Nilai kecocokan">
+            <svg viewBox="0 0 160 160" aria-hidden="true">
+              <circle class="score-track" cx="80" cy="80" r="68" />
+              <circle id="score-ring" class="score-ring" cx="80" cy="80" r="68" />
+            </svg>
+            <div class="score-value"><strong id="score-percent">0%</strong><span>selaras</span></div>
+          </div>
+          <h2 id="result-title"></h2>
+          <p id="result-copy" class="result-copy"></p>
+          <div class="result-details">
+            <span><b id="correct-count">0</b> dari 18 pilihan paling sehat</span>
+            <span id="sheet-status" role="status">Menyimpan hasil…</span>
+          </div>
+          <div class="result-actions">
+            <button id="replay-button" class="button primary" type="button">Main lagi <span>↻</span></button>
+            <button id="result-logout-button" class="button ghost" type="button">Keluar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>♥ komunikasi kecil, makna yang besar ♥</footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
